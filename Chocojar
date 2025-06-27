@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Chocojar by Syaa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #3c1f0d, #5d2e13);
+            color: #f5e9db;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .poster {
+            width: 100%;
+            max-width: 900px;
+            background: linear-gradient(to bottom, #2a1509, #3c1f0d);
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+            border: 2px solid #d4af37;
+        }
+        
+        .header {
+            padding: 50px 40px 30px;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(rgba(42, 21, 9, 0.9), rgba(42, 21, 9, 0.9));
+            border-bottom: 1px solid #5d2e13;
+        }
+        
+        .main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.8rem;
+            color: #f5e9db;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            font-weight: 800;
+            text-shadow: 0 3px 6px rgba(0, 0, 0, 0.8);
+            line-height: 1.1;
+        }
+        
+        .subtitle {
+            font-size: 1.8rem;
+            color: #d4af37;
+            font-weight: 400;
+            margin: 0 auto 20px;
+            font-style: italic;
+            max-width: 80%;
+            line-height: 1.6;
+        }
+        
+        .tagline {
+            background: rgba(212, 175, 55, 0.15);
+            padding: 15px;
+            margin: 20px auto;
+            font-size: 1.4rem;
+            border-radius: 10px;
+            max-width: 700px;
+            line-height: 1.8;
+            font-style: italic;
+        }
+        
+        .chocolate-showcase {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 30px 40px;
+            flex-wrap: wrap;
+        }
+        
+        .chocolate-type {
+            text-align: center;
+            max-width: 260px;
+            padding: 30px;
+            border-radius: 15px;
+            background: rgba(90, 46, 19, 0.4);
+            transition: all 0.4s ease;
+            border: 1px solid #5d2e13;
+        }
+        
+        .chocolate-type:hover {
+            transform: translateY(-10px);
+            background: rgba(90, 46, 19, 0.7);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+        
+        .chocolate-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: #d4af37;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .chocolate-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #f5e9db;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .chocolate-desc {
+            font-size: 1.1rem;
+            color: #d4af37;
+            line-height: 1.6;
+        }
+        
+        .description {
+            padding: 30px 40px;
+            text-align: center;
+            font-size: 1.4rem;
+            font-style: italic;
+            color: #d4af37;
+            line-height: 1.8;
+            background: rgba(60, 31, 13, 0.5);
+            margin: 0 40px 20px;
+            border-radius: 15px;
+            border: 1px solid #5d2e13;
+        }
+        
+        .uses-section {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 30px 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .use-item {
+            text-align: center;
+            padding: 25px;
+            background: rgba(90, 46, 19, 0.4);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            border: 1px solid #5d2e13;
+        }
+        
+        .use-item:hover {
+            transform: translateY(-5px);
+            background: rgba(90, 46, 19, 0.7);
+        }
+        
+        .use-icon {
+            font-size: 2.5rem;
+            color: #d4af37;
+            margin-bottom: 15px;
+        }
+        
+        .use-text {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #f5e9db;
+        }
+        
+        .cta-section {
+            padding: 40px;
+            text-align: center;
+            background: linear-gradient(135deg, #5d2e13, #3c1f0d);
+            position: relative;
+            border-top: 1px solid #5d2e13;
+        }
+        
+        .cta-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #f5e9db;
+            margin-bottom: 30px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        
+        .whatsapp-button {
+            background: linear-gradient(to bottom, #25D366, #128C7E);
+            color: white;
+            border: none;
+            padding: 20px 50px;
+            font-size: 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            text-decoration: none;
+        }
+        
+        .whatsapp-button i {
+            margin-right: 15px;
+            font-size: 2rem;
+        }
+        
+        .whatsapp-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
+        }
+        
+        .shopee-button {
+            background: linear-gradient(to bottom, #FF5722, #E64A19);
+            color: white;
+            border: none;
+            padding: 20px 50px;
+            font-size: 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            text-decoration: none;
+        }
+        
+        .shopee-button i {
+            margin-right: 15px;
+            font-size: 2rem;
+        }
+        
+        .shopee-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
+        }
+        
+        .contact-info {
+            margin-top: 15px;
+            font-size: 1.4rem;
+            color: #d4af37;
+        }
+        
+        .chocolate {
+            position: absolute;
+            font-size: 6rem;
+            opacity: 0.1;
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        .choc-1 {
+            top: 10%;
+            left: 5%;
+        }
+        
+        .choc-2 {
+            top: 15%;
+            right: 7%;
+            transform: rotate(45deg);
+        }
+        
+        .choc-3 {
+            bottom: 15%;
+            left: 8%;
+            transform: rotate(-30deg);
+        }
+        
+        .choc-4 {
+            bottom: 20%;
+            right: 5%;
+            transform: rotate(60deg);
+        }
+        
+        .link-info {
+            margin-top: 25px;
+            font-size: 1.2rem;
+            color: #d4af37;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .link-info a {
+            color: #f5e9db;
+            text-decoration: none;
+            border-bottom: 1px dashed #d4af37;
+            transition: all 0.3s ease;
+        }
+        
+        .link-info a:hover {
+            color: #d4af37;
+            border-bottom: 1px solid #d4af37;
+        }
+        
+        @media (max-width: 900px) {
+            .chocolate-showcase {
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+            }
+            
+            .uses-section {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .main-title {
+                font-size: 3.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.4rem;
+            }
+            
+            .header {
+                padding: 40px 30px;
+            }
+            
+            .cta-section {
+                padding: 30px;
+            }
+            
+            .description {
+                padding: 25px;
+                margin: 0 20px 20px;
+            }
+            
+            .button-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+            
+            .whatsapp-button, .shopee-button {
+                width: 100%;
+                max-width: 400px;
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .main-title {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+                max-width: 90%;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
+            
+            .whatsapp-button, .shopee-button {
+                padding: 16px 30px;
+                font-size: 1.5rem;
+            }
+            
+            .chocolate-name {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="poster">
+        <!-- Chocolate decorative elements -->
+        <div class="chocolate choc-1">🍫</div>
+        <div class="chocolate choc-2">🍫</div>
+        <div class="chocolate choc-3">🍫</div>
+        <div class="chocolate choc-4">🍫</div>
+        
+        <div class="header">
+            <h1 class="main-title">PREMIUM CHOCOJAR BY SYAA</h1>
+            <p class="subtitle">Tak cukup tidur sebab tak boleh berhenti makan 😊<br>Sekali rasa, confirm repeat!</p>
+            <div class="tagline">
+                Setiap lapisan penuh dengan kerangupan dan lelehan coklat premium 😊
+            </div>
+        </div>
+        
+        <div class="chocolate-showcase">
+            <div class="chocolate-type">
+                <div class="chocolate-icon">🍫</div>
+                <h2 class="chocolate-name">Dark Chocolate</h2>
+                <p class="chocolate-desc">Rich, intense flavor with deep cocoa notes. Perfect for true chocolate connoisseurs.</p>
+            </div>
+            
+            <div class="chocolate-type">
+                <div class="chocolate-icon">🥛</div>
+                <h2 class="chocolate-name">Dark Milk Chocolate</h2>
+                <p class="chocolate-desc">The perfect balance - rich dark chocolate with creamy milk texture.</p>
+            </div>
+            
+            <div class="chocolate-type">
+                <div class="chocolate-icon">✨</div>
+                <h2 class="chocolate-name">White Chocolate</h2>
+                <p class="chocolate-desc">Creamy, sweet, and luxurious. A delightful treat for special moments.</p>
+            </div>
+        </div>
+        
+        <div class="description">
+            Made with premium ingredients and crafted with passion. Each jar is a journey of exquisite flavors.
+        </div>
+        
+        <div class="uses-section">
+            <div class="use-item">
+                <div class="use-icon"><i class="fas fa-coffee"></i></div>
+                <div class="use-text">Ngopi petang</div>
+            </div>
+            
+            <div class="use-item">
+                <div class="use-icon"><i class="fas fa-gift"></i></div>
+                <div class="use-text">Buat hadiah</div>
+            </div>
+            
+            <div class="use-item">
+                <div class="use-icon"><i class="fas fa-heart"></i></div>
+                <div class="use-text">Stok waktu stress!</div>
+            </div>
+        </div>
+        
+        <div class="cta-section">
+            <h2 class="cta-title">Ready to Experience Premium Chocojar?</h2>
+            
+            <div class="button-container">
+                <a href="https://wa.link/fvbm14" class="whatsapp-button" target="_blank">
+                    <i class="fab fa-whatsapp"></i> ORDER VIA WHATSAPP
+                </a>
+                <a href="https://s.shopee.com.my/6AZYKziShs" class="shopee-button" target="_blank">
+                    <i class="fas fa-shopping-cart"></i> ORDER VIA SHOPEE
+                </a>
+            </div>
+</body>
+</html>
